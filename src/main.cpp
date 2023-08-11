@@ -11,6 +11,7 @@
 // Inputs to and outputs from the network are conveyed in binary form as single
 // precision floating point values.
 //
+#define ENABLE_GL_BUFFER
 #include <cstring>
 #include <iostream>
 #include <getopt.h>

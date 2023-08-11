@@ -22,7 +22,7 @@
     adb push ./build/snpe-sample /data/local/tmp/snpe_lab
     <!-- 将依赖库推到设备上 -->
     adb shell "mkdir -p /data/local/tmp/snpe_lib"
-    adb push ./3rdparty/snpe-2.7.0.4264/lib/aarch64-android-clang8.0/ /data/local/tmp/snpe_lib
+    adb push ./3rdparty/snpe-2.12.0.230626/lib/aarch64-android/ /data/local/tmp/snpe_lib
     <!-- 运行 -->
     adb shell
     export SNPE_TARGET_ARCH=aarch64-android-clang8.0
