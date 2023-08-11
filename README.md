@@ -23,9 +23,15 @@
     <!-- 将依赖库推到设备上 -->
     adb shell "mkdir -p /data/local/tmp/snpe_lib"
     adb push ./3rdparty/snpe-2.12.0.230626/lib/aarch64-android/ /data/local/tmp/snpe_lib
+    <!-- 将 raw 图像都推送到设备上 -->
+    adb shell "mkdir -p /data/local/tmp/input"
+    adb push ./tools/dst/* /data/local/tmp/input
+    <!-- 将转换好的  dlc 模型push到设备上 -->
+    adb shell "mkdir -p /data/local/tmp/dlc"
+    adb push ./models/* /data/local/tmp/dlc
     <!-- 运行 -->
     adb shell
-    export SNPE_TARGET_ARCH=aarch64-android-clang8.0
+    export SNPE_TARGET_ARCH=aarch64-android
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/local/tmp/snpe_lib/$SNPE_TARGET_ARCH
     cd /data/local/tmp/snpe_lab
     ./snpe-sample -h
@@ -53,6 +59,7 @@
                     Optionally, user can provide multiple packages as a comma-separated list. 
       -z  <NUMBER>  The maximum number that resizable dimensions can grow into. 
                     Used as a hint to create UserBuffers for models with dynamic sized outputs. Should be a positive integer and is not applicable when using ITensor. 
+      -s  <TYPE>   Source of user buffers to use [GLBUFFER, CPUBUFFER] (CPUBUFFER is default).
       -c           Enable init caching to accelerate the initialization process of SNPE. Defaults to disable.
       -l  <VAL,VAL,VAL> Specifies the order of precedence for runtime e.g  cpu_float32, dsp_fixed8_tf etc. Valid values are:- 
                         cpu_float32 (Snapdragon CPU)       = Data & Math: float 32bit 
@@ -62,4 +69,7 @@
                         cpu (Snapdragon CPU)               = Same as cpu_float32 
                         gpu (Adreno GPU)                   = Same as gpu_float32_16_hybrid 
                         dsp (Hexagon DSP)                  = Same as dsp_fixed8_tf 
+      -x            Specifies to use the fixed point execution on CPU runtime for quantized DLC.
+                    Used in conjunction with CPU runtime.
+
     ```
