@@ -33,8 +33,9 @@
     adb shell
     export SNPE_TARGET_ARCH=aarch64-android
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/data/local/tmp/snpe_lib/$SNPE_TARGET_ARCH
-    cd /data/local/tmp/snpe_lab
+    cd /data/local/tmp
     ./snpe-sample -h
+    ./snpe_lab/snpe-sample -i input.txt -d dlc/vit_l_16_bs16_sim.dlc -o output/
 
 ### 5. 多 backend 支持
     ```
