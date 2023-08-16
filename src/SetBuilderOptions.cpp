@@ -1,11 +1,3 @@
-//==============================================================================
-//
-//  Copyright (c) 2017-2021, 2023 Qualcomm Technologies, Inc.
-//  All Rights Reserved.
-//  Confidential and Proprietary - Qualcomm Technologies, Inc.
-//
-//==============================================================================
-
 #include "SetBuilderOptions.hpp"
 
 #include "SNPE/SNPE.hpp"

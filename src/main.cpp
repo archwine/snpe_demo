@@ -11,7 +11,6 @@
 // Inputs to and outputs from the network are conveyed in binary form as single
 // precision floating point values.
 //
-#define ENABLE_GL_BUFFER
 #include <cstring>
 #include <iostream>
 #include <getopt.h>
@@ -34,10 +33,8 @@
 #include "Util.hpp"
 #include "DlSystem/DlError.hpp"
 #include "DlSystem/RuntimeList.hpp"
-#ifdef ENABLE_GL_BUFFER
 #include <GLES2/gl2.h>
 #include "CreateGLBuffer.hpp"
-#endif
 
 #include "DlSystem/UserBufferMap.hpp"
 #include "DlSystem/IUserBuffer.hpp"

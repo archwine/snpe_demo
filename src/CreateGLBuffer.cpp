@@ -5,8 +5,6 @@
 //  Confidential and Proprietary - Qualcomm Technologies, Inc.
 //
 //==============================================================================
-#define ENABLE_GL_BUFFER
-#ifdef ENABLE_GL_BUFFER
 
 #include <stdlib.h>
 #include <time.h>
@@ -60,5 +58,3 @@ void CreateGLBuffer::setGPUPlatformConfig(zdl::DlSystem::PlatformConfig& platfor
     userGpuConfig.userGLConfig = userGLConfig;
     platformConfig.setUserGpuConfig(userGpuConfig);
 }
-
-#endif

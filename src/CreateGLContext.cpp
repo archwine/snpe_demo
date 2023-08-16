@@ -5,8 +5,6 @@
 //  Confidential and Proprietary - Qualcomm Technologies, Inc.
 //
 //==============================================================================
-#define ENABLE_GL_BUFFER
-#ifdef ENABLE_GL_BUFFER
 
 #include <iostream>
 #include <cstdlib>
@@ -67,5 +65,3 @@ void CreateGLContext() {
 
     EGL_RESULT_CHECK(eglMakeCurrent(eglDisplay, eglSurfacePbuffer, eglSurfacePbuffer, eglContext));
 }
-
-#endif

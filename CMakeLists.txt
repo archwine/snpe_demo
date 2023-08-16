@@ -10,26 +10,11 @@ endif()
 # 设置android stl类型
 set(CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION clang)
 set(CMAKE_ANDROID_STL_TYPE c++_shared)
+add_compile_definitions(ENABLE_GL_BUFFER)
 
 set(PLATFORM "aarch64-android-clang" CACHE STRING "")
 
 project(snpe-sample)
-
-# if (${CMAKE_ANDROID_ARCH_ABI} STREQUAL "arm64-v8a")
-#     if(${CMAKE_ANDROID_STL_TYPE} STREQUAL "c++_shared")
-#         set(SNPE_LIB_DIR ${CMAKE_SOURCE_DIR}/3rdparty/snpe-2.12.0.230626/lib/aarch64-android-clang8.0)
-#     else()
-#         message(FATAL_ERROR "Unsupported STL type: '${CMAKE_ANDROID_STL_TYPE}'")
-#     endif()
-# elseif(${CMAKE_ANDROID_ARCH_ABI} STREQUAL "armeabi-v7a")
-#     if(${CMAKE_ANDROID_STL_TYPE} STREQUAL "c++_shared")
-#         set(SNPE_LIB_DIR ${CMAKE_SOURCE_DIR}/3rdparty/snpe-2.12.0.230626/lib/arm-android-clang8.0)
-#     else()
-#         message(FATAL_ERROR "Unsupported STL type: '${CMAKE_ANDROID_STL_TYPE}'")
-#     endif()
-# else()
-#     message(FATAL_ERROR "Unsupported ABI: '${CMAKE_ANDROID_ARCH_ABI}'")
-# endif()
 
 set(SNPE_LIB_DIR ${CMAKE_SOURCE_DIR}/3rdparty/snpe-2.12.0.230626/lib/aarch64-android)
 
